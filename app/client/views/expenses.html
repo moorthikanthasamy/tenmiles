@@ -1,0 +1,87 @@
+<div class="row">
+
+
+    <div class="col-md-4">
+
+
+        <form novalidate ng-submit="xformSubmit()">
+            <div class="form-group row">
+                <label for="inputEmail3" class="col-sm-2 col-form-label">Category</label>
+                <div class="col-sm-10">
+
+                    <select class="custom-select" ng-model="xform.category" ng-options="obj.id as obj.name for obj in category">
+                        <option value="">- Category -</option>
+                    </select>
+
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputPassword3" class="col-sm-2 col-form-label">Title</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" ng-model="xform.title" id="inputPassword3" placeholder="Title">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputEmail3" class="col-sm-2 col-form-label">Date</label>
+                <div class="col-sm-10">
+                    <input type="date" class="form-control" ng-model="xform.date" id="inputEmail3" placeholder="date">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputPassword3" class="col-sm-2 col-form-label">Amount</label>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" ng-model="xform.amount" id="inputPassword3" placeholder="Amount">
+                </div>
+            </div>
+
+
+            <div class="form-group row">
+                <div class="offset-sm-2 col-sm-10">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+                <div class="offset-sm-1 col-sm-10">
+                    <button type="button" class="btn btn-primary">Update</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-8">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Category</th>
+                    <th>Title</th>
+                    <th>Date</th>
+                    <th>Amount</th>
+                    <th>Actions</th>
+                </tr>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr ng-repeat="list in xpensesList">
+                    <td>{{$index+1}}</td>
+                    <td>{{list.category}}</td>
+                    <td>{{list.title}}</td>
+                    <td>{{ list.date | date : 'MM/dd/yyyy'}} </td>
+                    <td>{{list.amount}}</td>
+                    <td>
+                        <button type="button" class="btn btn-warning btn-sm" ng-click="editExpenese(list)">
+                            Edit
+                        </button>
+                        <button type="button" class="btn btn-danger btn-sm" ng-click="removeExpenses(list._id)">
+                            Remove
+                        </button>
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+
+
+    </div>
+</div>

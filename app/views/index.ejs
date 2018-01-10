@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <title>xTracker</title>
+    <base href="/" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="stylesheet" type="text/css" href="./resources/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./resources/css/starter-template.css">
+    <link href="bower_components/angular-xeditable/dist/css/xeditable.css" rel="stylesheet">
+
+</head>
+
+
+<body ng-controller="xpenseCon">
+
+
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" ui-sref="/">xTracker</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" ui-sref="expenses">Expenses
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" ui-sref="stats">Statistics</a>
+                </li>
+
+            </ul>
+
+        </div>
+    </nav>
+
+    <main role="main" class="container-fluid">
+        <ui-view></ui-view>
+    </main>
+    <script type="text/javascript" src="./bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="./resources/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="./bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="./node_modules/chart.js/dist/Chart.min.js"></script>
+    <script src="./node_modules/angular-chart.js/dist/angular-chart.min.js"></script>
+    <script type="text/javascript" src="controllers/dashboard.controller.js"></script>
+
+</body>
+
+</html>
